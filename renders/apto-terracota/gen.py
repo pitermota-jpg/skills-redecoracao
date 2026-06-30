@@ -39,7 +39,9 @@ RACK = (
     "e NÃO fixado na parede, logo ABAIXO da TV que está pendurada na parede. É um rack baixo e horizontal, "
     "de madeira (com detalhes em preto), pés aparentes, linha leve e clean, combinando com o buffet de "
     "madeira existente. A TV continua pendurada na parede; o rack apenas repousa no piso embaixo dela. "
-    "Não transforme em painel ripado embutido — ele deve parecer um móvel solto."
+    "PROIBIDO: NÃO instale painel de madeira, painel ripado, marcenaria nem qualquer revestimento ATRÁS ou "
+    "EMBAIXO da TV. A parede atrás da TV fica APENAS PINTADA (lisa), com a TV pendurada diretamente nela; "
+    "abaixo da TV existe SOMENTE o rack solto apoiado no chão — nada mais."
 )
 MOOD = (
     "CLIMA: ambiente intimista, aconchegante e confortável. ILUMINAÇÃO INDIRETA e quente (fitas de LED "
@@ -90,7 +92,16 @@ PHOTOS = {
     "foto3": ("foto3.jpg", "16:9", P3, False),
     "foto4": ("foto4.jpg", "9:16", P4, True),
 }
-VARIANTS = {"A-colordrench": COLOR_A, "B-faixa": COLOR_B}
+COLOR_C = (
+    "PINTURA BICOLOR (bloco de cor horizontal): pinte a parte SUPERIOR de TODAS as paredes — os 2/3 de "
+    "CIMA da altura — na cor CLARA off-white (a MESMA do teto), de modo que a faixa clara ocupe 2/3 da "
+    "parede e pareça uma continuação ampla do teto. Apenas o TERÇO INFERIOR (1/3 de baixo) de todas as "
+    "paredes fica na cor terrosa terracota/argila quente (um pouco mais clara e avermelhada). A linha "
+    "divisória é HORIZONTAL, contínua, nivelada e na MESMA altura em todo o ambiente, contornando todas as "
+    "paredes a cerca de 1/3 da altura medida a partir do rodapé. TETO permanece claro (off-white, igual à "
+    "faixa de cima). Iluminação indireta quente; imagem bem iluminada, NÃO escura."
+)
+VARIANTS = {"C-faixa2tercos": COLOR_C}
 
 
 def build_prompt(view_txt, color_txt, has_tv):
