@@ -101,7 +101,17 @@ COLOR_C = (
     "paredes a cerca de 1/3 da altura medida a partir do rodapé. TETO permanece claro (off-white, igual à "
     "faixa de cima). Iluminação indireta quente; imagem bem iluminada, NÃO escura."
 )
-VARIANTS = {"C-faixa2tercos": COLOR_C}
+COLOR_D = (
+    "PINTURA (color-drench verde-oliva/sálvia): pinte TODAS as paredes do ambiente numa única cor "
+    "VERDE-OLIVA SUAVE E ACINZENTADO (sage/olive amendoado, terroso, levemente esmaecido — um verde "
+    "quente e sofisticado, NEM vivo NEM escuro demais, tipo 'sálvia esfumaçada'). Todas as paredes na "
+    "MESMA cor, do rodapé ao teto (color-drench). O TETO permanece CLARO (off-white). A paleta deve "
+    "harmonizar com a madeira nogueira dos móveis e com o sofá de veludo verde-petróleo (que deve "
+    "aninhar na cena, não competir), enquanto realça os acentos quentes existentes (mostarda, terracota, "
+    "prato vermelho). Iluminação indireta quente que valoriza o tom esverdeado; imagem bem iluminada, "
+    "aconchegante, NÃO escura."
+)
+VARIANTS = {"D-verde-oliva": COLOR_D}
 
 
 def build_prompt(view_txt, color_txt, has_tv):
