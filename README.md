@@ -6,6 +6,12 @@ Três skills que trabalham juntas para redecorar ambientes a partir de uma foto:
 - **nano-banana-pro** — motor de geração/edição de imagens (Google Nano Banana Pro / Gemini). Usado pelas outras duas.
 - **busca-produtos** — busca por imagem (Google Lens via SerpAPI) para descobrir **onde comprar** os itens da cena.
 
+Além delas, o repositório inclui a skill oficial do [notebooklm-py](https://github.com/teng-lin/notebooklm-py):
+
+- **notebooklm** — acesso programático ao Google NotebookLM (criar notebooks, adicionar fontes, gerar
+  podcasts/vídeos/quizzes/flashcards, etc.). Instalada a partir do próprio pacote com
+  `notebooklm skill install`. Veja a seção [NotebookLM](#notebooklm) abaixo.
+
 ## Como instalar
 
 ### Opção 1 — peça ao Claude (mais fácil)
@@ -54,3 +60,41 @@ No Claude, basta pedir em linguagem natural, por exemplo:
 > "Redecora esse quarto como um estúdio de gravação." (anexe a foto)
 
 O Claude aciona a skill **redecoracao**, gera os mockups e, se você quiser, usa a **busca-produtos** para achar onde comprar cada item.
+
+## NotebookLM
+
+A skill **notebooklm** dá acesso ao [Google NotebookLM](https://notebooklm.google.com/) pela linha
+de comando. Ela é a skill oficial mantida junto com o pacote [notebooklm-py](https://github.com/teng-lin/notebooklm-py)
+e vive em `.claude/skills/notebooklm/`.
+
+### Instalar / atualizar
+
+```bash
+# CLI (traz o navegador Playwright para o login)
+uv tool install "notebooklm-py[browser]"
+
+# (re)instala a skill neste projeto — sobrescreve com --force ao atualizar
+notebooklm skill install --scope project --target claude
+```
+
+### Autenticar (uma vez, precisa de navegador)
+
+```bash
+notebooklm login      # abre o navegador para login no Google
+notebooklm doctor     # confere auth e configuração do perfil
+```
+
+> O `login` é interativo e depende de navegador — rode na **sua máquina**, não num ambiente remoto/headless.
+
+### Uso rápido
+
+```bash
+notebooklm create "Minhas notas" --use
+notebooklm source add "https://exemplo.com/artigo"     # URL, arquivo, YouTube ou texto
+notebooklm ask "quais são os temas principais?"
+notebooklm generate audio "deep dive sobre os pontos-chave" --wait
+notebooklm download audio ./podcast.mp3
+```
+
+No Claude Code, basta pedir em linguagem natural (ex.: *"crie um podcast sobre esses PDFs"*) ou
+chamar `/notebooklm` — a skill traduz o pedido nos comandos acima.
